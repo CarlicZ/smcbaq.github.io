@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M.2接口笔记 | 九曲盘桓洞</title><meta name="keywords" content="电子设计,标准介绍"><meta name="author" content="smcbaq"><meta name="copyright" content="smcbaq"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="M.2接口笔记[toc] 简要介绍NGFF M.2（以下下简称M2）和SATA Express（以下下简称SATAe）是用以替代当前MiniPCI-Express（以下下简称MIni PCIe）&#x2F;mSATA和SATA的新一代接口。 因为看到稚晖君的量子计划觉得这种接口非常适合开发板模块化设计，所以开始学习这种接口的基本规格。 接口命名接口命名主要根据接口宽度，长度，高度以及关键Key位置命名，具体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="M.2接口笔记">
+<meta property="og:url" content="http://www.smcbaq.top:8081/2021/07/09/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="九曲盘桓洞">
+<meta property="og:description" content="M.2接口笔记[toc] 简要介绍NGFF M.2（以下下简称M2）和SATA Express（以下下简称SATAe）是用以替代当前MiniPCI-Express（以下下简称MIni PCIe）&#x2F;mSATA和SATA的新一代接口。 因为看到稚晖君的量子计划觉得这种接口非常适合开发板模块化设计，所以开始学习这种接口的基本规格。 接口命名接口命名主要根据接口宽度，长度，高度以及关键Key位置命名，具体">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.smcbaq.top:8082/picture/background/数码宝贝/8.png">
+<meta property="article:published_time" content="2021-07-09T03:20:00.000Z">
+<meta property="article:modified_time" content="2021-07-19T07:32:03.000Z">
+<meta property="article:author" content="smcbaq">
+<meta property="article:tag" content="电子设计">
+<meta property="article:tag" content="标准介绍">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.smcbaq.top:8082/picture/background/数码宝贝/8.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://www.smcbaq.top:8081/2021/07/09/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: smcbaq","link":"链接: ","source":"来源: 九曲盘桓洞","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'M.2接口笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-07-19 15:32:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="http://www.smcbaq.top:8082/picture/background/一人之下/张楚岚_1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://www.smcbaq.top:8082/picture/background/数码宝贝/8.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">九曲盘桓洞</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">M.2接口笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-09T03:20:00.000Z" title="发表于 2021-07-09 11:20:00">2021-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-19T07:32:03.000Z" title="更新于 2021-07-19 15:32:03">2021-07-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/PCB%E8%AE%BE%E8%AE%A1/">PCB设计</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="M.2接口笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="M-2接口笔记"><a href="#M-2接口笔记" class="headerlink" title="M.2接口笔记"></a>M.2接口笔记</h1><p>[toc]</p>
+<h2 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h2><p>NGFF M.2（以下下简称M2）和SATA Express（以下下简称SATAe）是用以替代当前MiniPCI-Express（以下下简称MIni PCIe）/mSATA和SATA的新一代接口。</p>
+<p>因为看到稚晖君的量子计划觉得这种接口非常适合开发板模块化设计，所以开始学习这种接口的基本规格。</p>
+<h2 id="接口命名"><a href="#接口命名" class="headerlink" title="接口命名"></a>接口命名</h2><p>接口命名主要根据接口<strong>宽度，长度，高度以及关键Key位置</strong>命名，具体如下图所示：</p>
+<p><img src="http://www.smcbaq.top:8082/picture/project/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3/%E6%8E%A5%E5%8F%A3%E5%91%BD%E5%90%8D.jpg" alt="接口命名"></p>
+<p>前几个还比较好理解，重点是<strong>关键Key位置</strong>需要了解到就是M.2接口哪几个位置少Pin就是哪个Key的，目前使用的有A、B、E、G、M一共五种Key，位置如下图：</p>
+<p><img src="http://www.smcbaq.top:8082/picture/project/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3/Key%E4%BD%8D%E7%BD%AE.jpg" alt="Key位置"></p>
+<p>同时几个Key可以同时出现，公头可以插入少Key的母头（协议兼容不冲突的情况下），所以非常适合自己定义自己的协议。</p>
+<p>所以M.2接口是一种一共有75个Pin，最多提供67个Pin的接口。</p>
+<h2 id="规格要求"><a href="#规格要求" class="headerlink" title="规格要求"></a>规格要求</h2><p>M.2模块是被安装到主机电路板提供匹配的连接器，并且使用一个安装螺钉固定模块到指定位置。组件可能被安装在M.2模块的任意侧面，实际的模块类型限定了可以安装的组件最大厚度；允许的组件<strong>最大厚度是每侧1.5毫米</strong>。有多种用于单侧或双侧的M.2模块主机端连接器，根据M.2扩展卡和主机PCB的情况提供不同的空间量。[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-compreviews-3">3]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-m.2-intro-orvem-4">4]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-te-ngff-10">10]</a>主机上的电路板通常被设计为能接受多种长度的M.2模块，这也意味着接受较长M.2模块的插座通常也能接受较短的同类模块，只需要为较短的模块提供不同位置的安装螺钉。[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-11">11]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-12">12]</a></p>
+<p>M.2模块的外形是长方形，在短边一侧有一个连接器（台湾俗称《金手指》，有<strong>最多67针的75个点位</strong>，<strong>0.5毫米间距</strong>，各针分布在PCB的两短边），并在另一侧短边的中心有一个半圆形安装固定孔。连接器上的各引脚额定最多50<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BC%8F%E7%89%B9">V</a>和0.5<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%89%E5%9F%B9">A</a>，而连接器本身要求耐受最低60次拔插。M.2标准允许模块<strong>宽度为12、16、22和30毫米</strong>，<strong>长度16、26、30、38、42、60、80和110毫米</strong>。市售M.2 扩展卡主要是22毫米宽度，长度有30、42、60、80和110毫米等规格[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-sata-io-m.2-2">2]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-m.2-intro-orvem-4">4]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-te-ngff-10">10]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-13">13]</a>。对于固态硬盘适用的 M.2 模块，最常见的尺寸为 22mm (宽) x30mm (长)、22mm x 42mm、22mm x 60mm、22mm x 80mm 和 22mm x 110mm。这些扩展卡将会依据上述的尺寸来称呼：前两位数代表宽度 (都是 22mm)，而剩余的位数则是代表长度，从 30mm 起到 110mm 长。因此，M.2 固态硬盘被区分为 2230、2242、2260、2280 和 22110[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-14">14]</a>。</p>
+<p>M.2标准的设计目的是为了修订和完善<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/SATA">mSATA</a>标准，较小的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8D%B0%E5%88%B7%E7%94%B5%E8%B7%AF%E6%9D%BF">印刷电路板</a>（PCB）可能是其主要诱因之一。随着mSATA带来<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/PCI_Express">PCI Express Mini Card</a>的外形和连接器优势，M.2的设计旨在最大化利用PCB空间并最小化模块空间。作为其设计结果，M.2标准允许更长的模块和双面组件群，M.2 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98">SSD</a>设备可以提供更大的存储容量，与mSATA设备占用同样空间，但提供双倍的存储容量。[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-snia-webcast-1">1]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-compreviews-3">3]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-15">15]</a></p>
+<p>M.2模块的PCB板提供最多75个点位的连接器；取决于模块类型，部分针位被去除以存在一个或多个防呆键位。主机上的M.2连接器（插槽）可能填充一个或多个匹配的接口，这取决于主机可接受的模块类型；截至2014年4月，主机侧的连接器可以只填充一个防呆键位（无论B key或 M Key）[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-m.2-intro-orvem-4">4]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-te-ngff-10">10]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-rog-asus-313352014-16">16]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-17">17]</a>。此外，用于SATA或双通道PCI Express (PCIe ×2)的M.2插槽被称为”socket 2 configuration”或者”socket 2”，用于四通道PCI Express (PCIe ×4)的插槽被称为”socket 3 configuration”或”socket 3”[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-snia-webcast-1">1]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2#cite_note-18">18]</a>。</p>
+<h2 id="金手指设计规范"><a href="#金手指设计规范" class="headerlink" title="金手指设计规范"></a>金手指设计规范</h2><p>暂时没找到，用的是lceda里面用户的开源库的标准，宽度20mil，长度50-75mil，阻焊扩展4mil，如下图所示：</p>
+<p><img src="http://www.smcbaq.top:8082/picture/project/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3/%E5%BC%80%E6%BA%90%E7%A4%BA%E6%84%8F.jpg" alt="开源库示意"></p>
+<p><strong>7/18更新M.2设计规范</strong></p>
+<p>找到了TDK品牌专业的2242的M.2接口SSD的规格书，其中规格如下图：</p>
+<p><img src="http://www.smcbaq.top:8082/picture/project/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3/%E6%A0%87%E5%87%862242.jpg" alt="2242规格"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/greless/article/details/51698662">【CSDN】：NGFF、M.2、mSATA、miniPCI-e基础知识入门</a></p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/M.2">WIKI定义</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">smcbaq</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.smcbaq.top:8081/2021/07/09/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3%E7%AC%94%E8%AE%B0/">http://www.smcbaq.top:8081/2021/07/09/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.smcbaq.top:8081" target="_blank">九曲盘桓洞</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/">电子设计</a><a class="post-meta__tags" href="/tags/%E6%A0%87%E5%87%86%E4%BB%8B%E7%BB%8D/">标准介绍</a></div><div class="post_share"><div class="social-share" data-image="http://www.smcbaq.top:8082/picture/background/数码宝贝/8.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/16/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/AD%E8%A7%84%E5%88%99%E5%8F%8A%E5%B8%83%E7%BA%BF/"><img class="prev-cover" src="http://www.smcbaq.top:8082/picture/background/数码宝贝/9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">AD规则及使用技巧</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/31/note/P%E5%85%AC%E5%BC%80/%E5%B7%A5%E5%85%B7/git/"><img class="next-cover" src="http://www.smcbaq.top:8082/picture/background/数码宝贝/1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git使用</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/07/16/note/P公开/电子设计/AD规则及布线/" title="AD规则及使用技巧"><img class="cover" src="http://www.smcbaq.top:8082/picture/background/数码宝贝/9.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-16</div><div class="title">AD规则及使用技巧</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="http://www.smcbaq.top:8082/picture/background/一人之下/张楚岚_1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">smcbaq</div><div class="author-info__description">真常应物，真常得性；常应常静，常清静矣。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/smcbaq" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zsh1282984748@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#M-2%E6%8E%A5%E5%8F%A3%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">M.2接口笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">简要介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%91%BD%E5%90%8D"><span class="toc-number">1.2.</span> <span class="toc-text">接口命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E6%A0%BC%E8%A6%81%E6%B1%82"><span class="toc-number">1.3.</span> <span class="toc-text">规格要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%91%E6%89%8B%E6%8C%87%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83"><span class="toc-number">1.4.</span> <span class="toc-text">金手指设计规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.5.</span> <span class="toc-text">参考</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/07/26/note/P%E5%85%AC%E5%BC%80/%E5%B7%A5%E5%85%B7/jupyter/" title="jupyter使用"><img src="http://www.smcbaq.top:8082/picture/background/数码宝贝/10.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jupyter使用"/></a><div class="content"><a class="title" href="/2021/07/26/note/P%E5%85%AC%E5%BC%80/%E5%B7%A5%E5%85%B7/jupyter/" title="jupyter使用">jupyter使用</a><time datetime="2021-07-26T14:50:00.000Z" title="发表于 2021-07-26 22:50:00">2021-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/16/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/AD%E8%A7%84%E5%88%99%E5%8F%8A%E5%B8%83%E7%BA%BF/" title="AD规则及使用技巧"><img src="http://www.smcbaq.top:8082/picture/background/数码宝贝/9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AD规则及使用技巧"/></a><div class="content"><a class="title" href="/2021/07/16/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/AD%E8%A7%84%E5%88%99%E5%8F%8A%E5%B8%83%E7%BA%BF/" title="AD规则及使用技巧">AD规则及使用技巧</a><time datetime="2021-07-16T14:20:00.000Z" title="发表于 2021-07-16 22:20:00">2021-07-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/09/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3%E7%AC%94%E8%AE%B0/" title="M.2接口笔记"><img src="http://www.smcbaq.top:8082/picture/background/数码宝贝/8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="M.2接口笔记"/></a><div class="content"><a class="title" href="/2021/07/09/note/P%E5%85%AC%E5%BC%80/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1/M.2%E6%8E%A5%E5%8F%A3%E7%AC%94%E8%AE%B0/" title="M.2接口笔记">M.2接口笔记</a><time datetime="2021-07-09T03:20:00.000Z" title="发表于 2021-07-09 11:20:00">2021-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/31/note/P%E5%85%AC%E5%BC%80/%E5%B7%A5%E5%85%B7/git/" title="Git使用"><img src="http://www.smcbaq.top:8082/picture/background/数码宝贝/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git使用"/></a><div class="content"><a class="title" href="/2021/05/31/note/P%E5%85%AC%E5%BC%80/%E5%B7%A5%E5%85%B7/git/" title="Git使用">Git使用</a><time datetime="2021-05-31T03:52:00.000Z" title="发表于 2021-05-31 11:52:00">2021-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/31/note/P%E5%85%AC%E5%BC%80/%E5%B7%A5%E5%85%B7/linux/" title="Linux常用命令"><img src="http://www.smcbaq.top:8082/picture/background/数码宝贝/6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux常用命令"/></a><div class="content"><a class="title" href="/2021/05/31/note/P%E5%85%AC%E5%BC%80/%E5%B7%A5%E5%85%B7/linux/" title="Linux常用命令">Linux常用命令</a><time datetime="2021-05-31T03:36:00.000Z" title="发表于 2021-05-31 11:36:00">2021-05-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By smcbaq</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
